@@ -44,30 +44,54 @@
     <div class="container theme-showcase" role="main">
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
-	<h1>Quality: About This Data Set</h1>
-        <p>Write a brief summary about the quality of the data set here</a></p>
+      <div class="jumbotron", style="text-align:center">
+      	<h1 style="font-size:50px;">  Data Quality  </h1> 
       </div>
-
     
-      <div class="page-header">
-	<h2>Is the data complete?</h2>
-	<p>If not, what is missing and what concerns does it raise?
-	What is your evidence for this?</p>
-      </div>
-      
-      <div class="page-header">
-	<h2>Is the data coherent?</h2>
-	<p>Does it make sense relative to itself? Does it match your
-	expectations? Are the distributions sensible? What is your
-	evidence for this?</p>
-      </div>
+ 
 
-      <div class="page-header">
-	<h2>Is the data correct?</h2>
-	<p>What aspects of this data can you verify? How did you do so? What did
-	you find?</p>
-      </div>
+    <div class="page-header">
+        <h1> <font color = "#4e5a68">Completeness </font> </h1>
+        <p><font size = "4" face="verdana" color="#5f5f5f"> 
+        If not, what is missing and what concerns does it raise?
+        What is your evidence for this? 
+        </font></p>
+    </div>
+    
+    
+    <div class="page-header">
+        <h1> <font color = "#4e5a68"> Coherence </font> </h1>
+        <p><font size = "4" face="verdana" color="#5f5f5f"> 
+		</br>
+		From both statistical and visual analysis, we found that the dataset in general makes sense relative to itself and meets the expectations.
+		For example, the distribution of temperature is roughly symmetric, which makes sense because people tend to not ride bikes on days that are too hot or too cold. 
+		The frequency tables shows that only minority of days are holidays, and about 2/3 of the days are working days. 
+ 		The distribution of humidity is skewed left with a mode around 0.7, while the distribution of windspeed is skewed right with a mode around 0.15. 
+ 		There are only a few days with light rain or snow, and there is no observation of heavy rain or snow during the years. 
+		Since the data is collected in Washington D.C., these recorded observations are reasonable.
+	    </br>
+	    </br>	    
+	 	However, there are a few data points showing some unexpected pattern. 
+		For example, there is one point with 0 humidity, which means that no water vapour is present in the air. 
+ 	    While humidity can approach 0 in the real world, this is unlikely to happen in Washington, D.C. 
+ 	    Therefore, this data point is an outerlier, possibly due to measurement or report error. It can be safely dropped for future analysis. 
+ 	    </br>
+ 	    </br> 	    
+ 	    Ohter possible outliers include day 2012-10-29, on which the total number of bike rental was only 22. 
+ 	    This value is significantly lower than the average total number of bike rental per day (more than 4000), and values for other data field (e.g. weather, temperature, date) are all in common range. 
+ 	    Since it is the only data point with count value less than 400, it seems to be abnormal and requires further examination. There are also a few days with normalised wind speed, which is much greater than the average. 
+	    </br>
+        </font></p>
+    </div>
+    
+    <div class="page-header">
+        <h1> <font color = "#4e5a68"> Correctness </font> </h1>
+        <p><font size = "4" face="verdana" color="#5f5f5f"> 
+        What aspects of this data can you verify? How did you do so? What did
+	you find? 
+        </font></p>
+    </div>    
+
 
     </div> <!-- /container -->
 

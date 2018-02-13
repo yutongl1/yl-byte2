@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
-    <title>Explore Byte Tutorial</title>
+    <title>Interactive Data Science: Byte 2</title>
     
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -16,6 +16,24 @@
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
     <!-- Custom styles for this project -->
     <link href="css/explore.css" rel="stylesheet">
+    
+    <style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
   </head>
   
   <body role="document">
@@ -33,9 +51,9 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="about">About This Data Set</a></li>
-	    <li><a href="quality">Data Quality</a></li>
+            <li class="active"> <a href="#", style="font-size: 15px">Home</a></li>
+            <li><a href="about", style="font-size: 15px">About This Data Set</a></li>
+	    <li><a href="quality", style="font-size: 15px">Data Quality</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -44,15 +62,14 @@
     <div class="container theme-showcase" role="main">
       
       <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
-	<h1>Interactive Data Science Project Exploratory Analysis Byte Example</h1>
-        <p>This is the Exploratory Analysis Byte of the Interactive Data Science class.</p>
+      <div class="jumbotron", style="text-align:center">
+      	<h1 style="font-size:50px;">  Bike Sharing System Statistics  </h1> 
+		<h2> <font color = "#4e5a68"> Interactive Data Science: Byte 2  </font> </h2>
+		<h3> <font color = "#4e5a68"> Yutong Li (yutongl1) </font> </h3>
       </div>
       
       <div class="page-header">
 	
-      </div> <!-- /page-header -->
-    </div> <!-- /container -->
     
     <div class="button-toolbar" role="toolbar" id="headers" name="headers">
       {% for column in columns %}
@@ -93,6 +110,85 @@
   </div>
   
   
+  <div class="page-header">
+        <h1> <font color = "#4e5a68"> Statistical Summary </font> </h1>
+    </div>  
+  
+  
+  <table>
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+  <tr>
+    <td>Ernst Handel</td>
+    <td>Roland Mendel</td>
+    <td>Austria</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>Helen Bennett</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Laughing Bacchus Winecellars</td>
+    <td>Yoshi Tannamuri</td>
+    <td>Canada</td>
+  </tr>
+  <tr>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>Giovanni Rovelli</td>
+    <td>Italy</td>
+  </tr>
+</table>
+
+  <div class="page-header">
+        <h1> <font color = "#4e5a68"> Visualization: Number of Bike Rentals versus Continues Variables </font> </h1>
+    </div>  
+  
+  
+    <div>
+	<iframe align = "left" width="570" height="400" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?containerId=googft-gviz-canvas&amp;q=select+col9%2C+col14+from+1s5KkYkVDxl2tqMCzoMO_RgY3E2nFYeLOTYvIoThh+order+by+col9+asc&amp;viz=GVIZ&amp;t=SCATTER&amp;rmax=250&amp;uiversion=2&amp;gco_forceIFrame=true&amp;gco_hasLabelsColumn=true&amp;gco_useFirstColumnAsDomain=true&amp;gco_treatLabelsAsText=false&amp;gco_legacyScatterChartLabels=true&amp;gco_lineWidth=0&amp;gco_booleanRole=certainty&amp;gco_pointSize=7&amp;gco_hAxis=%7B%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%2C+%22title%22%3A%22Temperature%22%2C+%22titleTextStyle%22%3A%7B%22color%22%3A%22%23666666%22%2C+%22fontSize%22%3A%2214%22%2C+%22italic%22%3Afalse%2C+%22bold%22%3Atrue%7D%7D&amp;gco_vAxes=%5B%7B%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%2C+%22title%22%3A%22Number+of+Bike+Rentals%22%2C+%22titleTextStyle%22%3A%7B%22color%22%3A%22%23666666%22%2C+%22fontSize%22%3A%2214%22%2C+%22italic%22%3Afalse%2C+%22bold%22%3Atrue%7D%7D%2C%7B%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%7D%5D&amp;gco_legend=none&amp;gco_series=%7B%220%22%3A%7B%22color%22%3A%22%23f6b26b%22%2C+%22pointSize%22%3A4%2C+%22errorBars%22%3A%7B%22errorType%22%3A%22none%22%7D%7D%7D&amp;gco_trendlines=%7B%220%22%3A%7B%22type%22%3A%22linear%22%2C+%22pointSize%22%3A0%2C+%22visibleInLegend%22%3Atrue%2C+%22lineWidth%22%3A3%2C+%22opacity%22%3A0.4%2C+%22labelInLegend%22%3A%22Linear+Trend+Line+%22%2C+%22showR2%22%3Atrue%2C+%22degree%22%3A3%2C+%22color%22%3A%22%23f6b26b%22%7D%7D&amp;gco_title=Temperature+Versus+Daily+Bike+Rentals&amp;gco_titleTextStyle=%7B%22color%22%3A%22%23666666%22%2C+%22fontSize%22%3A%2220%22%2C+%22bold%22%3Atrue%7D&amp;gco_fontName=sans-serif&amp;gco_tooltip=%7B%22isHtml%22%3Atrue%7D&amp;tmplt=5&amp;width=570&amp;height=400"></iframe>    
+	</div>
+	
+    <div >
+    <iframe align = "right" width="570" height="400" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?containerId=googft-gviz-canvas&amp;q=select+col15%2C+col14+from+1s5KkYkVDxl2tqMCzoMO_RgY3E2nFYeLOTYvIoThh+order+by+col15+asc&amp;viz=GVIZ&amp;t=SCATTER&amp;rmax=250&amp;uiversion=2&amp;gco_forceIFrame=true&amp;gco_hasLabelsColumn=true&amp;gco_useFirstColumnAsDomain=true&amp;gco_treatLabelsAsText=false&amp;gco_legacyScatterChartLabels=true&amp;gco_lineWidth=0&amp;gco_booleanRole=certainty&amp;gco_pointSize=7&amp;gco_hAxis=%7B%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%2C+%22title%22%3A%22Feeling+Temperature%22%2C+%22titleTextStyle%22%3A%7B%22color%22%3A%22%23666666%22%2C+%22fontSize%22%3A%2214%22%2C+%22italic%22%3Afalse%2C+%22bold%22%3Atrue%7D%7D&amp;gco_vAxes=%5B%7B%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%2C+%22title%22%3A%22Number+of+Bike+Rentals%22%2C+%22titleTextStyle%22%3A%7B%22color%22%3A%22%23666666%22%2C+%22fontSize%22%3A%2214%22%2C+%22italic%22%3Afalse%2C+%22bold%22%3Atrue%7D%7D%2C%7B%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%7D%5D&amp;gco_legend=none&amp;gco_title=Feeling+Temperature+Versus+Daily+Bike+Rentals&amp;gco_titleTextStyle=%7B%22color%22%3A%22%23666666%22%2C+%22fontSize%22%3A%2220%22%2C+%22bold%22%3Atrue%7D&amp;gco_fontName=sans-serif&amp;gco_series=%7B%220%22%3A%7B%22color%22%3A%22%23f6b26b%22%2C+%22pointSize%22%3A5%7D%7D&amp;gco_trendlines=%7B%220%22%3A%7B%22type%22%3A%22linear%22%2C+%22pointSize%22%3A0%2C+%22visibleInLegend%22%3Atrue%2C+%22lineWidth%22%3A2%2C+%22opacity%22%3A0.4%2C+%22labelInLegend%22%3A%22Trendline+for+Data+series+1%22%2C+%22showR2%22%3Afalse%2C+%22degree%22%3A2%7D%7D&amp;gco_tooltip=%7B%22isHtml%22%3Atrue%7D&amp;tmplt=13&amp;width=570&amp;height=400"></iframe>
+	</div>
+	
+    <div >
+	<iframe align = "left" width="570" height="400" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?containerId=googft-gviz-canvas&amp;q=select+col11%2C+col14+from+1s5KkYkVDxl2tqMCzoMO_RgY3E2nFYeLOTYvIoThh+order+by+col11+asc&amp;viz=GVIZ&amp;t=SCATTER&amp;rmax=250&amp;uiversion=2&amp;gco_forceIFrame=true&amp;gco_hasLabelsColumn=true&amp;gco_useFirstColumnAsDomain=true&amp;gco_treatLabelsAsText=false&amp;gco_legacyScatterChartLabels=true&amp;gco_lineWidth=0&amp;gco_booleanRole=certainty&amp;gco_pointSize=7&amp;gco_hAxis=%7B%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%2C+%22title%22%3A%22Normalized+Humidity%22%2C+%22titleTextStyle%22%3A%7B%22color%22%3A%22%23666666%22%2C+%22fontSize%22%3A%2214%22%2C+%22italic%22%3Afalse%2C+%22bold%22%3Atrue%7D%7D&amp;gco_vAxes=%5B%7B%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%2C+%22title%22%3A%22Number+of+Bike+Rentals%22%2C+%22titleTextStyle%22%3A%7B%22color%22%3A%22%23666666%22%2C+%22fontSize%22%3A%2214%22%2C+%22italic%22%3Afalse%2C+%22bold%22%3Atrue%7D%7D%2C%7B%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%7D%5D&amp;gco_legend=none&amp;gco_title=Humidity+Versus+Daily+Bike+Rentals&amp;gco_titleTextStyle=%7B%22color%22%3A%22%23666666%22%2C+%22fontSize%22%3A%2220%22%2C+%22bold%22%3Atrue%7D&amp;gco_fontName=sans-serif&amp;gco_series=%7B%220%22%3A%7B%22color%22%3A%22%236d9eeb%22%2C+%22pointSize%22%3A5%7D%7D&amp;gco_trendlines=%7B%220%22%3A%7B%22type%22%3A%22linear%22%2C+%22pointSize%22%3A0%2C+%22visibleInLegend%22%3Atrue%2C+%22lineWidth%22%3A2%2C+%22opacity%22%3A0.4%2C+%22labelInLegend%22%3A%22Trendline+for+Data+series+1%22%2C+%22showR2%22%3Afalse%2C+%22degree%22%3A2%7D%7D&amp;gco_tooltip=%7B%22isHtml%22%3Atrue%7D&amp;tmplt=12&amp;width=570&amp;height=400"></iframe>    
+	</div>
+	
+    <div>
+	<iframe align = "right" width="550" height="400" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?containerId=googft-gviz-canvas&amp;q=select+col12%2C+col14+from+1s5KkYkVDxl2tqMCzoMO_RgY3E2nFYeLOTYvIoThh+order+by+col12+asc&amp;viz=GVIZ&amp;t=SCATTER&amp;rmax=250&amp;uiversion=2&amp;gco_forceIFrame=true&amp;gco_hasLabelsColumn=true&amp;gco_useFirstColumnAsDomain=true&amp;gco_treatLabelsAsText=false&amp;gco_legacyScatterChartLabels=true&amp;gco_lineWidth=0&amp;gco_booleanRole=certainty&amp;gco_pointSize=7&amp;gco_hAxis=%7B%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%2C+%22title%22%3A%22Normalized+Windspeed%22%2C+%22titleTextStyle%22%3A%7B%22color%22%3A%22%23666666%22%2C+%22fontSize%22%3A%2214%22%2C+%22italic%22%3Afalse%2C+%22bold%22%3Atrue%7D%7D&amp;gco_vAxes=%5B%7B%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%2C+%22title%22%3A%22Number+of+Bike+Rentals%22%2C+%22titleTextStyle%22%3A%7B%22color%22%3A%22%23666666%22%2C+%22fontSize%22%3A%2214%22%2C+%22italic%22%3Afalse%2C+%22bold%22%3Atrue%7D%7D%2C%7B%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%7D%5D&amp;gco_legend=none&amp;gco_title=Windspeed+Versus+Daily+Bike+Rentals&amp;gco_titleTextStyle=%7B%22color%22%3A%22%23666666%22%2C+%22fontSize%22%3A%2220%22%2C+%22bold%22%3Atrue%7D&amp;gco_fontName=sans-serif&amp;gco_series=%7B%220%22%3A%7B%22color%22%3A%22%2393c47d%22%2C+%22pointSize%22%3A5%7D%7D&amp;gco_trendlines=%7B%220%22%3A%7B%22type%22%3A%22linear%22%2C+%22pointSize%22%3A0%2C+%22visibleInLegend%22%3Atrue%2C+%22lineWidth%22%3A2%2C+%22opacity%22%3A0.4%2C+%22labelInLegend%22%3A%22Trendline+for+Data+series+1%22%2C+%22showR2%22%3Afalse%2C+%22degree%22%3A2%7D%7D&amp;gco_tooltip=%7B%22isHtml%22%3Atrue%7D&amp;tmplt=11&amp;width=550&amp;height=400"></iframe>    
+	</div>
+	
+  <div class="page-header" style="clear:both ">
+        <h1> <font color = "#4e5a68"> Visualization: Count Versus Timeline </font> </h1>
+    </div>
+   
+	<div , style="text-align:center">
+    <h2> <font face="verdana" color="#5f5f5f"> Total Bike Rental Over over  2011 and 2012 </font> </h2>
+	<iframe width="1200" height="500" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?containerId=googft-gviz-canvas&amp;viz=GVIZ&amp;t=LINE_AGGREGATE&amp;isXyPlot=true&amp;bsize=0.0&amp;q=select+col0%2C+col14+from+1s5KkYkVDxl2tqMCzoMO_RgY3E2nFYeLOTYvIoThh&amp;qrs=+where+col0+%3E%3D+&amp;qre=+and+col0+%3C%3D+&amp;qe=+order+by+col0+asc&amp;uiversion=2&amp;rstart=2011%2F1%2F1+0%3A0%3A0&amp;rend=2012%2F12%2F30+0%3A0%3A0&amp;gco_forceIFrame=true&amp;gco_hasLabelsColumn=true&amp;width=1200&amp;height=500"></iframe>
+	</div>
+	<p><font size = "4" face="verdana" color="#5f5f5f"> The zoomable line chart shows the trend of Total Bike Rentals per day for year 2011 and 2012.
+	The vertical axis shows the amount of bike rentals for the day, while the horizontal axis shows the timeline fro 2011-01-01 to 2012-12-31. 
+	</font></p>
+
+	 </div> <!-- /page-header -->
+    </div> <!-- /container -->
+	
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
