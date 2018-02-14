@@ -58,8 +58,14 @@
     <div class="page-header">
         <h1> <font color = "#4e5a68">Completeness </font> </h1>
         <p><font size = "4" face="verdana" color="#5f5f5f"> 
-        If not, what is missing and what concerns does it raise?
-        What is your evidence for this? 
+        The dataset appears to be complete. There is no missing data. 
+        Since the variables are hard facts (such as temperature, windspeed, etc), it is also easy to find alternative source to compare, 
+        and see if the dataset contains reported error. 
+        
+        The dataset will be appropriate if we would like to investigate the relationship between 
+        the daily level of bicycle rentals and environmental and seasonal variables in 2011 and 2012.
+        However, if we want to do prediction about the daily bike rentals, this dataset will be too outdated to use. 
+        In addition, the dataset has bias: it only contain biken rentals in Washington D.C. 
         </font></p>
     </div>
     
@@ -72,8 +78,9 @@
 		From both statistical and visual analysis, we found that the dataset in general makes sense relative to itself and meets the expectations.
 		The data values fall into appropriate range with only a few exceptions, and the distribution shapes for variables are resonable.
 		For example, the distribution of temperature is roughly symmetric, which makes sense because people tend to not ride bikes on days that are too hot or too cold. 
-		The frequency tables shows that only minority of days are holidays, and about 2/3 of the days are working days. The bivariate relationships also meet my expectation: 
-		for example, number of bike rentals is slightly negatively related to both humidity and windspeed. 
+		The frequency tables shows that only minority of days are holidays, and about 2/3 of the days are working days, which is consistent with the reality. 
+		The registered bike rentals is strictly smaller than the total bike rentals. In addition, 
+		The bivariate relationships also meet my expectation: for example, number of bike rentals is slightly negatively related to both humidity and windspeed. 
 	    </br>
 	    </br>	    
 	 	However, there are a few data points showing some unexpected pattern. 
@@ -97,7 +104,9 @@
     
     <div class="page-header">
         <h1> <font color = "#4e5a68"> Correctness </font> </h1>
-        <p><font size = "4" face="verdana" color="#5f5f5f"> 	
+        <p><font size = "4" face="verdana" color="#5f5f5f"> 
+        
+        
 		I verified the coherence and correctness of data using the statistical summary tables and the EDA plots. 
 		I focused on the data points described in the previous section - the data points that are distant from other observations. 
 		Specifically examining these data points, I tried to figure out whether the abnormality is reasonable or is it part of the data behavior. 
