@@ -24,18 +24,18 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     autoescape=True)
 
 # This API key is provided by google as described in the tutorial
-API_KEY = 'XXxxXxXXXXxxNXXxXXXxxxNNXXxxxxxxxXXXxXX'
+API_KEY = 'AIzaSyCU8TVK16Y6YbYQ42WtqsZt-zEXkESlmEY'
 
 # This uses discovery to create an object that can talk to the 
 # fusion tables API using the developer key
 service = build('fusiontables', 'v1', developerKey=API_KEY)
 
 # This is the table id for the fusion table
-TABLE_ID = 'NxxxNXxXxxNxXXXXNXxXXXxXxxxNxXxNxXxxXxxX'
+TABLE_ID = '1s5KkYkVDxl2tqMCzoMO_RgY3E2nFYeLOTYvIoThh'
 
 # This is the default columns for the query
-query_cols = []
-query_values = ['Forlan'] #Change to be the value(s) you're querying in the column you've specified
+query_cols = ['date', 'season', 'holiday', 'workingday', 'weather', 'temp', 'atemp', 'humidity', 'windspeed', 'registered', 'count']	
+query_values = [] #Change to be the value(s) you're querying in the column you've specified
 
 # Import the Flask Framework
 from flask import Flask, request
@@ -64,6 +64,7 @@ def make_query(cols, values, limit):
         else:
             string_cols = string_cols + ", " + col
     string_cols = string_cols[2:len(string_cols)]
+    
 
     string_values = ""
     for val in values:
@@ -71,7 +72,7 @@ def make_query(cols, values, limit):
     string_values = string_values[2:len(string_values)]
     
     #Change this query to have your corresponding column (in our soccer example, the column for our WHERE is Scorer).
-    query = "SELECT " + string_cols + " FROM " + TABLE_ID + " WHERE Scorer = '" + string_values + "'"
+    query = "SELECT " + string_cols + " FROM " + TABLE_ID #+ " WHERE Scorer = '" + string_values + "'"
 
     query = query + " LIMIT " + str(limit)
 
@@ -79,7 +80,7 @@ def make_query(cols, values, limit):
     # query = "SELECT * FROM " + TABLE_ID + " WHERE  Scorer = 'Forlan' LIMIT 5"
 
     return query
-    
+
 # Note: We don't need to call run() since our application is embedded within
 # the App Engine WSGI application server.
 
@@ -87,7 +88,8 @@ def make_query(cols, values, limit):
 def index():
     template = JINJA_ENVIRONMENT.get_template('templates/index.html')
     request = service.column().list(tableId=TABLE_ID)
-    res = get_all_data(make_query([], query_values, 5)) #5 is our limit we're passing in
+    cols = ['date', 'season', 'holiday', 'workingday', 'weather', 'temp', 'atemp', 'humidity', 'windspeed', 'registered', 'count']	
+    res = get_all_data(make_query(cols, query_values, 5)) #5 is our limit we're passing in
     logging.info('allheaders')
     return template.render(columns=res['columns'], rows = res['rows'] )
 
@@ -96,7 +98,7 @@ def update_table():
     logging.info(request.get_json())
     cols = request.json['cols']
     logging.info(cols)
-    result = get_all_data(make_query(cols, query_values, 100))
+    result = get_all_data(make_query(cols, query_values, 5))
     logging.info(result)
     return json.dumps({'content' : result['rows'], 'headers' : result['columns']})
 
@@ -119,3 +121,4 @@ def page_not_found(e):
 def application_error(e):
     """Return a custom 500 error."""
     return 'Sorry, unexpected error: {}'.format(e), 500
+    

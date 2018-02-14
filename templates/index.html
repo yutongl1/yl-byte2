@@ -21,7 +21,6 @@
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 100%;
 }
 
 td, th {
@@ -70,6 +69,10 @@ tr:nth-child(even) {
       
       <div class="page-header">
 	
+    <div class="page-header">
+        <h1> <font color = "#4e5a68"> Quick Peek: First Five Rows of the Dataset </font> </h1>
+    </div>  
+    
     
     <div class="button-toolbar" role="toolbar" id="headers" name="headers">
       {% for column in columns %}
@@ -111,48 +114,112 @@ tr:nth-child(even) {
   
   
   <div class="page-header">
-        <h1> <font color = "#4e5a68"> Statistical Summary </font> </h1>
+        <h1> <font color = "#4e5a68"> Statistical Summary - Continuous Variable</font> </h1>
     </div>  
   
   
   <table>
   <tr>
-    <th>Company</th>
-    <th>Contact</th>
-    <th>Country</th>
+    <th> </th>
+    <th>Count</th>    
+    <th>Temperature</th>
+    <th>Feeling Temperature</th>
+    <th> Humidity</th>    
+    <th> Windspeed </th>
+    <th> Resigtered </th> 
   </tr>
   <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
+    <td><b>Mean</b></td>  
+    <td>4504</td>  
+    <td>0.50</td>  
+    <td>0.47</td>  
+    <td>0.63</td>  
+    <td>0.19</td>  
+    <td>3656</td>  
+
+
+
   </tr>
   <tr>
-    <td>Centro comercial Moctezuma</td>
-    <td>Francisco Chang</td>
-    <td>Mexico</td>
+    <td><b>Median</b></td>
+    <td>4548</td>  
+    <td>0.50</td>  
+    <td>0.49</td>  
+    <td>0.63</td>  
+    <td>0.18</td>  
+    <td>3662</td>   
   </tr>
   <tr>
-    <td>Ernst Handel</td>
-    <td>Roland Mendel</td>
-    <td>Austria</td>
-  </tr>
-  <tr>
-    <td>Island Trading</td>
-    <td>Helen Bennett</td>
-    <td>UK</td>
-  </tr>
-  <tr>
-    <td>Laughing Bacchus Winecellars</td>
-    <td>Yoshi Tannamuri</td>
-    <td>Canada</td>
-  </tr>
-  <tr>
-    <td>Magazzini Alimentari Riuniti</td>
-    <td>Giovanni Rovelli</td>
-    <td>Italy</td>
+    <td><b>Range</b></td>
+    
+    <td>[22, 8714]</td>  
+    <td>[0.06, 0.86]</td>  
+    <td>[0.08, 0.84]</td>  
+    <td>[0.00, 0.97]</td>  
+    <td>[0.02, 0.51]</td>  
+    <td>[20,6946]</td>  
+
   </tr>
 </table>
 
+
+  <div class="page-header">
+        <h1> <font color = "#4e5a68"> Statistical Summary - Categorical Variable</font> </h1>
+    </div>  
+  
+  	<table> 
+  	<tr> 
+  	<td style = "width: 10%; border: 0" >
+  	
+    <table>
+  	<tr>
+    	<th> Non Holiday</th>    
+    	<th> Holiday </th> 
+  	</tr>
+  	<tr> 
+    	<td>710</td>  
+    	<td>21</td>  
+  	</tr>
+	</table>
+	
+	</td>
+	
+	<td style = "width: 20%; border: 0">
+	
+    <table>
+  	<tr>
+    	<th> Non Working Days</th>    
+    	<th> Working Days </th> 
+  	</tr>
+  	<tr> 
+    	<td>231</td>  
+	    <td>500</td>  
+  	</tr>
+	</table>
+	
+	</td>
+	
+	<td style = "width: 40%; border: 0">
+	
+    <table>
+  	<tr>
+    	<th> 1: Clear/Partly Cloudy</th>    
+    	<th> 2: Mist </th> 
+    	<th> 3: Light Rain/Snow </th>     
+		<th> 4: Heavy Rain/Snow </th>         
+  	</tr>
+  	<tr> 
+    <td>463</td>  
+    <td>247</td>  
+    <td>21</td>  
+    <td>0</td>      
+  </tr>
+	</table>	
+	
+ 	</td>
+	</tr> 
+	</table>
+		
   <div class="page-header">
         <h1> <font color = "#4e5a68"> Visualization: Number of Bike Rentals versus Continues Variables </font> </h1>
     </div>  
@@ -180,7 +247,7 @@ tr:nth-child(even) {
    
 	<div , style="text-align:center">
     <h2> <font face="verdana" color="#5f5f5f"> Total Bike Rental Over over  2011 and 2012 </font> </h2>
-	<iframe width="1200" height="500" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?containerId=googft-gviz-canvas&amp;viz=GVIZ&amp;t=LINE_AGGREGATE&amp;isXyPlot=true&amp;bsize=0.0&amp;q=select+col0%2C+col14+from+1s5KkYkVDxl2tqMCzoMO_RgY3E2nFYeLOTYvIoThh&amp;qrs=+where+col0+%3E%3D+&amp;qre=+and+col0+%3C%3D+&amp;qe=+order+by+col0+asc&amp;uiversion=2&amp;rstart=2011%2F1%2F1+0%3A0%3A0&amp;rend=2012%2F12%2F30+0%3A0%3A0&amp;gco_forceIFrame=true&amp;gco_hasLabelsColumn=true&amp;width=1200&amp;height=500"></iframe>
+	<iframe width="1200" height="500" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?containerId=googft-gviz-canvas&amp;viz=GVIZ&amp;t=LINE_AGGREGATE&amp;isXyPlot=true&amp;bsize=0.0&amp;q=select+col0%2C+col14%2C+col13+from+1s5KkYkVDxl2tqMCzoMO_RgY3E2nFYeLOTYvIoThh&amp;qrs=+where+col0+%3E%3D+&amp;qre=+and+col0+%3C%3D+&amp;qe=+order+by+col0+asc&amp;uiversion=2&amp;gco_forceIFrame=true&amp;gco_hasLabelsColumn=true&amp;width=1200&amp;height=500"></iframe>
 	</div>
 	<p><font size = "4" face="verdana" color="#5f5f5f"> The zoomable line chart shows the trend of Total Bike Rentals per day for year 2011 and 2012.
 	The vertical axis shows the amount of bike rentals for the day, while the horizontal axis shows the timeline fro 2011-01-01 to 2012-12-31. 
