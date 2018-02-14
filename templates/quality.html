@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+    <title>Quality of This Data</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/theme.css" rel="stylesheet">
+  </head>
+
+  <body role="document">
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="about">About This Data Set</a></li>
+	    <li  class="active"><a href="quality">Data Quality</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container theme-showcase" role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron", style="text-align:center">
+      	<h1 style="font-size:50px;">  Data Quality  </h1> 
+      </div>
+		<p><font size = "4" face="verdana" color="#5f5f5f"> 
+      	To inspect the data qualities, I created statistical summary tables (mean, range, median) for continuous variables, 
+      	and frequency tables for categorical variables. Histograms for continuous varibales and box plots for categorical variables
+      	are created to display the data distribution and detect skewness. In addition,  the scatter plots are used to explore
+      	bivariate relationship between variables. 
+		</font></p>
+    
+ 
+    <div class="page-header">
+        <h1> <font color = "#4e5a68">Completeness </font> </h1>
+        <p><font size = "4" face="verdana" color="#5f5f5f"> 
+        If not, what is missing and what concerns does it raise?
+        What is your evidence for this? 
+        </font></p>
+    </div>
+    
+    
+    <div class="page-header">
+        <h1> <font color = "#4e5a68"> Coherence </font> </h1>
+        <p><font size = "4" face="verdana" color="#5f5f5f"> 
+		</br>
+		
+		From both statistical and visual analysis, we found that the dataset in general makes sense relative to itself and meets the expectations.
+		The data values fall into appropriate range with only a few exceptions, and the distribution shapes for variables are resonable.
+		For example, the distribution of temperature is roughly symmetric, which makes sense because people tend to not ride bikes on days that are too hot or too cold. 
+		The frequency tables shows that only minority of days are holidays, and about 2/3 of the days are working days. The bivariate relationships also meet my expectation: 
+		for example, number of bike rentals is slightly negatively related to both humidity and windspeed. 
+	    </br>
+	    </br>	    
+	 	However, there are a few data points showing some unexpected pattern. 
+		For example, in the histogram for humidity, we see one point with 0 humidity, which means that no water vapour is present in the air. 
+ 	    While humidity can approach 0 in the real world, this is unlikely to happen in Washington, D.C. 
+ 	    Therefore, this data point is an outerlier, possibly due to measurement or report error. It can be safely dropped for future analysis. 
+ 	    </br> 	    
+ 	     <div>
+		<iframe width="1200" height="500" scrolling="no" frameborder="no" src="https://fusiontables.google.com/embedviz?containerId=googft-gviz-canvas&amp;q=select+col9%2C+col15+from+1s5KkYkVDxl2tqMCzoMO_RgY3E2nFYeLOTYvIoThh+order+by+col9+asc&amp;viz=GVIZ&amp;t=SCATTER&amp;rmax=250&amp;uiversion=2&amp;gco_forceIFrame=true&amp;gco_hasLabelsColumn=true&amp;gco_useFirstColumnAsDomain=true&amp;gco_treatLabelsAsText=false&amp;gco_legacyScatterChartLabels=true&amp;gco_lineWidth=0&amp;gco_booleanRole=certainty&amp;gco_pointSize=7&amp;gco_hAxis=%7B%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%2C+%22title%22%3A%22Temperature+in+Celsius%22%2C+%22titleTextStyle%22%3A%7B%22color%22%3A%22%23666666%22%2C+%22fontSize%22%3A%2214%22%2C+%22italic%22%3Afalse%2C+%22bold%22%3Atrue%7D%7D&amp;gco_vAxes=%5B%7B%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%2C+%22title%22%3A%22Feeling+Temperature+in+Celsius+%22%2C+%22titleTextStyle%22%3A%7B%22color%22%3A%22%23666666%22%2C+%22fontSize%22%3A%2214%22%2C+%22italic%22%3Afalse%2C+%22bold%22%3Atrue%7D%7D%2C%7B%22useFormatFromData%22%3Atrue%2C+%22viewWindow%22%3A%7B%22max%22%3Anull%2C+%22min%22%3Anull%7D%2C+%22minValue%22%3Anull%2C+%22maxValue%22%3Anull%7D%5D&amp;gco_legend=none&amp;gco_title=Temperature+Versus+Feeling+Temperature&amp;gco_titleTextStyle=%7B%22color%22%3A%22%23666666%22%2C+%22fontSize%22%3A%2220%22%2C+%22bold%22%3Atrue%7D&amp;gco_series=%7B%220%22%3A%7B%22color%22%3A%22%23f6b26b%22%2C+%22pointSize%22%3A5%7D%7D&amp;gco_fontName=sans-serif&amp;gco_trendlines=%7B%220%22%3A%7B%22type%22%3A%22linear%22%2C+%22pointSize%22%3A0%2C+%22visibleInLegend%22%3Atrue%2C+%22lineWidth%22%3A2%2C+%22opacity%22%3A0.4%2C+%22labelInLegend%22%3A%22Trendline+for+Data+series+1%22%2C+%22showR2%22%3Afalse%2C+%22degree%22%3A2%7D%7D&amp;gco_tooltip=%7B%22isHtml%22%3Atrue%7D&amp;tmplt=14&amp;width=1200&amp;height=500"></iframe>
+		</div> 	    
+ 	    The above plot shows another example of a potential outlier. While feeling temperature and actual temperate have strong correlation, 
+ 	    there is one point with temperature 29 and feeling temperature 11. This is highly impossible to occur.  
+ 	    </br>
+ 	    </br>  	    
+ 	    Ohter possible outliers include day 2012-10-29, on which the total number of bike rental was only 22. (We know this by inspecting the range of count).
+ 	    This value is significantly lower than the average total number of bike rentals per day (more than 4000), and values for other data field (e.g. weather, temperature, date) are all in common range. 
+ 	    Since it is the only data point with count value less than 400, it seems to be abnormal and requires further examination. 
+	    </br>
+        </font></p>
+    </div>
+    
+    <div class="page-header">
+        <h1> <font color = "#4e5a68"> Correctness </font> </h1>
+        <p><font size = "4" face="verdana" color="#5f5f5f"> 	
+		I verified the coherence and correctness of data using the statistical summary tables and the EDA plots. 
+		I focused on the data points described in the previous section - the data points that are distant from other observations. 
+		Specifically examining these data points, I tried to figure out whether the abnormality is reasonable or is it part of the data behavior. 
+		
+		For example, weather is categorized into 4 levels, there is no observation of heavy rain or snow during the years. 
+		Since the data is collected in Washington D.C. (which means the sourse of data is biased), these observations are possible. 
+		On the other hand, the data points with 0 humidity, 22 rental counts and inconsistent temperatures, may be inaccurate measurement or report error. 
+		
+		
+		
+        </font></p>
+    </div>    
+
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/docs.min.js"></script>
+  </body>
+</html>
